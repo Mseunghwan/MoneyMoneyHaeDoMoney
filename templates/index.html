@@ -1,9 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>test</title>
+    <style>
+        body{
+            height: 100%;
+            width: 100%;
+            }
+        body h2{
+            text-align: center;
+            padding-top:50px
+        }
+        .input-group{
+            text-align: center;
+            padding:30px;
+        }
+        .input_search{
+            width: 50%;
+            padding-top: 1.5%;
+            padding-bottom: 1.5%;
+            text-align: center;
+        }
+        .button_search{
+            padding-top: 1.5%;
+            padding-bottom: 1.5%;
+        }
+    </style>
+    <title>국민연금사업장 조회서비스</title>
 </head>
 <body>
-    hihihi
+
+    <h2>국민연금 사업장 조회서비스</h2>
+        <form class="search" action="{{ url_for('search') }}" method="POST" > 
+        <div class="input-group">
+        <input class="input_search" type="search" class="form-control rounded" name="searchinput" placeholder="조회할 사업장을 검색해주세요." aria-label="Search" aria-describedby="search-addon" />
+        <button class="button_search" type="submit" class="btn btn-outline-primary">조회</button>
+      </div>
+    </form>
 </body>
 </html>
