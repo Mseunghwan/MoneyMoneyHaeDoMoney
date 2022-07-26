@@ -1,11 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+    <link rel="stylesheet" href="style.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
     <style>
-        
+        body{
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+.search-box{
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  height: 30px;
+  background-color: #fff;
+  border: 1px solid #9cb3cb;
+  border-radius: 30px;
+  transition: 0.4s;
+  width:60px;
+}
+.search-box:hover{
+  box-shadow: 0px 0px .5px 1px #9cb3cb;
+  width: 282px;
+}
+.search-btn{
+  text-decoration: none;
+  float: right;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #9cb3cb;
+}
+.search-box:hover > .search-btn{
+  background-color: #fff;
+}
+.input_search{
+  display: flex;
+  padding: 0;
+  width: 0px;
+  border:none;
+  background: none;
+  outline: none;
+  float: left;
+  font-size: 1rem;
+  line-height: 30px;
+  transition: .4s;
+}
+.search-box:hover > .search-txt{
+  width: 240px;
+  padding: 0 6px;
+}
+
         body{
             height: 100%;
             width: 100%;
@@ -38,10 +96,13 @@
     <h1>국민연금 사업장 조회서비스</h1>
     <h2>국민연금 보장되는지 쉽게 알아보자</h2>
         <form class="search" action="{{ url_for('search') }}" method="POST" > 
-        <div class="input-group">
-        <input class="input_search" type="search" class="form-control rounded" name="searchinput" placeholder="조회할 사업장을 검색해주세요." aria-label="Search" aria-describedby="search-addon" />
-        <button class="button_search" type="submit" class="btn btn-outline-primary">조회</button>
-      </div>
+
+            <div class="search-box">
+                <input type="search" class="input_search" name="searchinput" placeholder="">
+                <button class="search-btn" type="submint"href="#">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
     </form>
 </body>
 </html>
