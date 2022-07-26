@@ -40,7 +40,7 @@ for num in range(1, 54411):
 
 cur = con.cursor()
 
-for num3 in range(0, 544100):
+for num3 in range(0, 54420):
     cur.execute("insert into moneytable (id, member, number, address, companyname, companysector, isjoin) values (%s, %s, %s, %s, %s, %s, %s)", (num3+544121, member[num3], number[num3], address[num3], companyname[num3], companysector[num3], isjoin[num3]))
     con.commit()   ## 입력 후 해줘야 하는 commit()
 

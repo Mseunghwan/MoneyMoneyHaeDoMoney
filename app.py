@@ -30,8 +30,9 @@ def search():
         connect.commit()
         cur.close()
         connect.close()
+        
         if len(descript) > 0:
-            return render_template("search.html", descript=descript)
+            return render_template("search.html", input=input, descriptlength=len(descript), descript=descript)
         else:
             return render_template("index.html")
 
